@@ -1,12 +1,50 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
-        <title>Rock</title>
+				<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>The Best Game Ever</title>
         <!-- Link to your script file(s) and CSS in here somewhere -->
+				<link rel="stylesheet" href="./styles.css">
     </head>
     <body>
 
     <!-- Your interface markup goes here -->
     <!-- For interface examples, look in the `/examples/` directory in the root of your starter code repo. -->
-
+		<form id="game_form" onsubmit="return playGame(this)">
+				
+		    <input type="radio" name="game" id="RPS_GAME" value="RPS" onclick="validate(this)"/>
+		    <label for="RPS_GAME">Play Rock, Paper, Scissors?</label><br>
+		    <input type="radio" name="game" id="RPSLS_GAME" value="RPSLS" onclick="validate(this)"/>
+		    <label for="RPSLS_GAME">Play Rock, Paper, Scissors, Lizard, Spock?</label><br>
+				<br>
+				<input type="radio" name="opponent" id="opponent" value="Opponent" onclick="validate(this)"/>
+				<label for="opponent">Play against an opponent?</label><br>
+				<br>
+				<input type="radio" name="choice" id="ROCK" value="rock" onclick="validate(this)"/>
+				<label for="ROCK" id="ROCK_TAG">Rock</label><br>
+				
+				<input type="radio" name="choice" id="PAPER" value="paper" onclick="validate(this)"/>
+				<label for="PAPER" id="PAPER_TAG">Paper</label><br>
+				
+				<input type="radio" name="choice" id="SCISSORS" value="scissors" onclick="validate(this)"/>
+				<label for="SCISSORS" id="SCISSORS_TAG">Scissors</label><br>
+				
+				<input type="radio" name="choice" id="LIZARD" value="lizard" onclick="validate(this)"/>
+				<label for="LIZARD" id="LIZARD_TAG">Lizard</label><br>
+				
+				<input type="radio" name="choice" id="SPOCK" value="spock" onclick="validate(this)"/>
+				<label for="SPOCK" id="SPOCK_TAG">Spock</label><br>
+				
+				<button onclick="return startOver(this);" onsubmit="return false;">Reset</button>
+				<input id="play_button" type="submit" onclick="return playGame(this);" onsubmit="return false;" value="Play">
+		</form>
+		
+		<div id="results">
+				
+				<div id="results-text"></div>
+				<button onclick="return startOver(this);" onsubmit="return false;" id="reset_button">Start Over</button>
+		</div>
+		<script src="./scripts.js"></script>
     </body>
+		
 </html>
