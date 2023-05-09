@@ -7,7 +7,7 @@ h1 {
 p {
 }
 
-input#play_button {
+button#play_button {
 	display: none;
 }
 
